@@ -60,6 +60,9 @@ public class SchedulerConfig implements SchedulingConfigurer {
 				myTask.execute();
 			}
 		}, new Trigger() {
+			/**
+			 * Default: Scheduler Will run ever
+			 */
 			@Override
 			public Date nextExecutionTime(TriggerContext triggerContext) {
 				String cronExpression = "0 "+getMinute()+" "+getHour()+" * * *";
